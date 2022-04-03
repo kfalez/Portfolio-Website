@@ -23,27 +23,29 @@ export default function Header() {
     ScrollService.currentScreenBroadCaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
-    return TOTAL_SCREENS.map((screen, i) => (
+    return TOTAL_SCREENS.map((Screen, i) => (
       <div
-        key={screen.screen_name}
+        key={Screen.screen_name}
         className={getHeaderOptionsClass(i)}
-        onClick={() => switchScreen(i, screen)}
+        onClick={() => switchScreen(i, Screen)}
       >
-        <span>{screen.screen_name}</span>
+        <span>{Screen.screen_name}</span>
       </div>
     ));
   };
 
   const getHeaderOptionsClass = (index) => {
-    let classes = "header-container";
+    let classes = "header-option ";
 
     // if there is more than 1 screen displayed at the top as navigation, create space between the navigations
-    if (index < TOTAL_SCREENS.length - 1) classes += "header-option-separator";
+    if (index < TOTAL_SCREENS.length - 1) classes += "header-option-separator ";
 
     // have the name of the component marked as selected when clicked
-    if (selectedScreen === index) classes += "selected-header-option";
-    return;
+    if (selectedScreen === index) classes += "selected-header-option ";
+    return classes;
   };
+
+
 
   const switchScreen = (index, screen) => {
     let screenComponent = document.getElementById(screen.screen_name);
@@ -82,5 +84,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -28,7 +28,7 @@
     height: 2px;
     background-color: #1f2235;
 }
-.separator-blob{
+/* .separator-blob{
     height: 10px;
     width: 100%;
     position: absolute;
@@ -39,4 +39,4 @@
     width: 35px;
     border-radius: 10px;
     background-color: var( --dark-orange);
-}
+} */

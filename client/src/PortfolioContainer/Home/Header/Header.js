@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   TOTAL_SCREENS,
   GET_SCREEN_INDEX,
@@ -44,8 +44,6 @@ export default function Header() {
     if (selectedScreen === index) classes += "selected-header-option ";
     return classes;
   };
-
-
 
   const switchScreen = (index, screen) => {
     let screenComponent = document.getElementById(screen.screen_name);

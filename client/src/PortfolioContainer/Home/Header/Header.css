@@ -31,8 +31,9 @@
   display: none;
   color: var(--white);
 }
-.header-option-separator {
-  margin: 0 50 px 0 0;
+
+.header-option-separator{
+  margin: 0 50px 0 0;
   color: var(--white);
 }
 .selected-header-option {
@@ -68,7 +69,7 @@
     opacity: 0.8;
     transition: all 0.8s ease-out;
   }
-  .header-option-separator{
+  .header-options-separator{
       margin: 0;
   }
   .selected-header-option{

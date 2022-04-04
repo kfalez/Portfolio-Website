@@ -11,6 +11,20 @@ import "./Header.css";
 export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+  const [stickyClass, setStickyClass] = useState('');
+
+  useEffect(() => {
+    window.addEventListener('scroll', stickHeader);
+    return () => window.removeEventListener('scroll', stickHeader);
+  }, []);
+
+  const stickHeader = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      // window height changed for the demo
+      windowHeight > 150 ? setStickyClass('sticky-nav') : setStickyClass('');
+    }
+  };
 
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
@@ -55,10 +69,11 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <div className={`header ${stickyClass}`}>
       <div
         className="header-container"
         onClick={() => setShowHeaderOptions(!showHeaderOptions)}
+
       >
         <div className="header-parent">
           <div
@@ -83,4 +98,5 @@ export default function Header() {
       </div>
     </div>
   );
-}
+};
+

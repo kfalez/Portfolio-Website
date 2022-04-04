@@ -1,6 +1,7 @@
 import { TOTAL_SCREENS } from "./commonUtils";
 import { Subject } from "rxjs";
 import { object } from "prop-types";
+import Header from "../PortfolioContainer/Home/Header/Header.js"
 
 export default class ScrollService {
   static scrollHandler = new ScrollService();
@@ -26,13 +27,16 @@ export default class ScrollService {
 
   isElementInView = (elem, type) => {
     let rec = elem.getBoundingClientRect();
+    //this method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
+    // the view port  refers to the part of the document you're viewing which is currently visible in its window
     let elementTop = rec.top;
-    let elementBottom = rec.Bottom;
+    let elemBottom = rec.bottom;
 
-    let partiallyVisible =
-      elementTop < window.innerHeight && elementBottom >= 0;
-    let completelyVisible =
-      elementTop >= 0 && elementBottom <= window.innerHeight;
+    /* when the element is Partially Visible */
+    let partiallyVisible = elementTop < window.innerHeight && elemBottom >= 0;
+
+    /* Completely Visible */
+    let completelyVisible = elementTop >= 0 && elemBottom <= window.innerHeight;
 
     switch (type) {
       case "partial":
@@ -40,6 +44,7 @@ export default class ScrollService {
 
       case "complete":
         return completelyVisible;
+
       default:
         return false;
     }

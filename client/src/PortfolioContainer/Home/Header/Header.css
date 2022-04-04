@@ -3,6 +3,7 @@
   justify-content: center;
   height: 140px;
   color: var(--white);
+  background-color: black;
 }
 .header-parent {
   display: flex;
@@ -37,7 +38,13 @@
   color: var(--white);
 }
 .selected-header-option {
-  color: #ff5823;
+  color: #f1e318
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1110px) {
@@ -87,5 +94,14 @@
   .show-hamburger-options{
       left: 0;
       opacity: 1;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .content {
+    padding-top: 60px;
   }
 }

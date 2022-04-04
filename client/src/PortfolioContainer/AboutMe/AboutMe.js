@@ -3,7 +3,7 @@ import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading.js";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations.js";
 import { lastValueFrom } from "rxjs";
-import './AboutMe.css'
+import "./AboutMe.css";
 
 export default function AboutMe(props) {
   let fadeInScreenHandler = (screen) => {

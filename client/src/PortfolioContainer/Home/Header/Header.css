@@ -44,7 +44,9 @@
 .sticky-nav {
   position: fixed;
   top: 0;
+  background-color: black;
   width: 100%;
+  z-index: 1000;
 }
 
 @media only screen and (max-width: 1110px) {
@@ -93,7 +95,6 @@
   }
   .show-hamburger-options{
       left: 0;
-      opacity: 1;
   }
 
   .sticky {

@@ -3,6 +3,7 @@ import { TOTAL_SCREENS } from "../Utilities/commonUtils";
 
 export default function PortfolioContainer() {
   //map through the total screens: to have it displayed on the screen
+
   const mapAllScreens = () => {
     return TOTAL_SCREENS.map((screen) =>
       screen.component ? (
@@ -16,5 +17,6 @@ export default function PortfolioContainer() {
       )
     );
   };
-  return <div className="portfolio-container">{mapAllScreens()}</div>;
+  return (
+  <div className="portfolio-container">{mapAllScreens()}</div>)
 }

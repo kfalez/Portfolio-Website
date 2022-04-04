@@ -9,9 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
 
 export default function Header() {
+  const [stickyClass, setStickyClass] = useState('');
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
-  const [stickyClass, setStickyClass] = useState('');
 
   useEffect(() => {
     window.addEventListener('scroll', stickHeader);
@@ -22,7 +22,7 @@ export default function Header() {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 150 ? setStickyClass('sticky-nav') : setStickyClass('');
+      windowHeight > 0? setStickyClass('sticky-nav') : setStickyClass('');
     }
   };
 
@@ -70,7 +70,7 @@ export default function Header() {
 
   return (
     <div className={`header ${stickyClass}`}>
-      <div
+    <div
         className="header-container"
         onClick={() => setShowHeaderOptions(!showHeaderOptions)}
 

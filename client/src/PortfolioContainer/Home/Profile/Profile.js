@@ -9,10 +9,10 @@ export default function Profile() {
         <div className="profile-details">
           <div className="colz">
             <div className="colz-icon">
-              <a href="https://www.linkedin.com/in/kelten-falez-3100a845/">
+              <a href="https://www.linkedin.com/in/kelten-falez-3100a845/" target="_blank">
                 <i className="fa fa-linkedin-square"></i>
               </a>
-              <a href="https://github.com/kfalez">
+              <a href="https://github.com/kfalez" target="_blank">
                 <i className="fa fa-github-square"></i>
               </a>
             </div>
@@ -31,7 +31,7 @@ export default function Profile() {
                 <Typical
                   loop={Infinity}
                   steps={[
-                    "Highly Motivated 💭",
+                    "Innovator 💭",
                     1000,
                     "Full Stack Developer 💻",
                     1000,

@@ -95,7 +95,7 @@ const Resume =(props) =>{
     //     title: "Personal Website",
     //     duration: { fromDate: "Apr 2022", toDate: "Apr 2022" },
     //     description:
-    //       "Full Stack application developed for 2022 Hackathon. Developed to educate and provide insight to common pressure point related injuries for bed-restricted patients.",
+    //       "Portfolio website created to showcase my work and experience.",
     //     subHeading: "Tech-Stack: ReactJS, Boostrap ",
     //   },
       {

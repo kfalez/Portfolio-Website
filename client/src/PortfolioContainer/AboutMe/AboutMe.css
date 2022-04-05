@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top:145px;
+  padding-top:140px;
   /* margin: 10px 0 ; */
 }
 .about-me-parent {
@@ -15,6 +15,34 @@
   width: 100%;
   box-shadow: 0 0px 20px -2px #1f2235;
 }
+.icon-lang{
+  height: 1697px;
+  width:2400px;
+}
+
+.flexbox-icons{
+  display: flex;
+  flex-direction:column;
+  width:100px;
+  margin: auto;
+}
+
+.img-wrapper {
+  display: flex;
+  margin-bottom: 10px;
+}
+.img-wrapper img {
+  margin-right: 10px;
+}
+
+.icon-img{
+  height:50px;
+  width:50px;
+}
+.btn{
+  margin-top:20px;
+}
+
 .about-me-profile {
   width: 50%;
   background-image: url("../../assets/AboutMe/me.jpg");
@@ -30,7 +58,7 @@
   font-size: 12px;
 }
 .about-me-highlights {
-  margin: 80px 0;
+  margin: 35px 0;
 }
 .highlight-heading {
   font-family: "Poppins Bold";

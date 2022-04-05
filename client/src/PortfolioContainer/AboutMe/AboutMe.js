@@ -57,6 +57,15 @@ export default function AboutMe(props) {
               </div>
               {renderHighlight()}
             </div>
+            <div className="img-wrapper">
+              <img className="icon-img" src="img/icons/python.png" />
+              <img className="icon-img" src="img/icons/java.png" />
+              <img className="icon-img" src="img/icons/c.png" />
+              <img className="icon-img" src="img/icons/cpp.png" />
+              <img className="icon-img" src="img/icons/js.jpg" />
+              <img className="icon-img" src="img/icons/react.png" />
+              <img className="icon-img" src="img/icons/aws.png" />
+            </div>
             <div className="about-me-options">
               <button className="btn primary-btn">
                 {""}

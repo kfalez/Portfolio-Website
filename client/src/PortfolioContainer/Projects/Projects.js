@@ -209,9 +209,9 @@ export default function Projects(props) {
           </OwlCarousel>
         </div>
       </section>
-      <div className="footer-image">
+      {/* <div className="footer-image">
         <img src={shape} alt="check your internet!" />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -38,7 +38,10 @@ export default function AboutMe(props) {
   };
 
   return (
-    <div className="about-me-container screen-container fade-in" id={props.id || ""}>
+    <div
+      className="about-me-container screen-container fade-in"
+      id={props.id || ""}
+    >
       <div className="about-me-parent">
         <ScreenHeading
           title={"About Me"}
@@ -66,7 +69,10 @@ export default function AboutMe(props) {
               <img className="icon-img" src="img/icons/aws.png" />
             </div>
             <div className="about-me-options">
-              <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToContactMe()}>
+              <button
+                className="btn primary-btn"
+                onClick={() => ScrollService.scrollHandler.scrollToContactMe()}
+              >
                 {""}
                 Contact Me{" "}
               </button>

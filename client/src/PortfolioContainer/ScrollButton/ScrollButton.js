@@ -2,32 +2,22 @@ import React from "react";
 import ScrollService from "../../Utilities/ScrollService";
 import "./ScrollButton.css";
 
-
-  
-var myButton = document.getElementById("scroll-container");
-
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
-  try {
-    
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      console.log("yeah")
-      console.log(myButton)
-      myButton.style.display = "block";
-    } else {
-      console.log("yea2")
-      myButton.style.display = "none";
-    }
-  } catch (error) {
-    
+  const myButton = document.getElementById("scroller");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    myButton.style.display = "block";
+  } else {
+    myButton.style.display = "none";
   }
-
 }
 
 export default function ScrollButton() {
   return (
-    <div className="scroll-container">
+    <div className="scroll-container" id="scroller">
       <button
         className="btn-scroll"
         onClick={() => ScrollService.scrollHandler.scrollToHome()}
@@ -36,6 +26,5 @@ export default function ScrollButton() {
         <i className="fa fa-arrow-up"></i>
       </button>
     </div>
-    
   );
 }

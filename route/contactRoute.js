@@ -16,8 +16,8 @@ router.post("/contact", (req, res) => {
     service: "Gmail",
     port: 465,
     auth: {
-      user: "mailer.email@gmail.com",
-      pass: "password",
+      user: "",
+      pass: "",
     },
   });
   let mailOptions = {

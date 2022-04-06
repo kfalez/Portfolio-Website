@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading.js";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations.js";
-import { lastValueFrom } from "rxjs";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
+    if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
   const fadeInSubscription =
@@ -39,7 +38,7 @@ export default function AboutMe(props) {
   };
 
   return (
-    <div className="about-me-container screen-container" id={props.id || ""}>
+    <div className="about-me-container screen-container fade-in" id={props.id || ""}>
       <div className="about-me-parent">
         <ScreenHeading
           title={"About Me"}

@@ -1,11 +1,11 @@
 import { TOTAL_SCREENS } from "./commonUtils";
 import { Subject } from "rxjs";
-import { object } from "prop-types";
+
 
 export default class ScrollService {
   static scrollHandler = new ScrollService();
 
-  static currentScreenBroadCaster = new Subject();
+  static currentScreenBroadcaster = new Subject();
 
   static currentScreenFadeIn = new Subject();
 
@@ -49,8 +49,9 @@ export default class ScrollService {
     }
   };
   //check the screen that is fully displayed (on the viewport)
-  checkCurrentUnderViewport = (event) => {
-    if (!event || object.keys(event).length < 1) return;
+  checkCurrentScreenUnderViewport = (event) => {
+    if (!event || Object.keys(event).length < 1) return;
+
     for (let screen of TOTAL_SCREENS) {
       let screenFromDOM = document.getElementById(screen.screen_name);
       if (!screenFromDOM) continue;
@@ -59,17 +60,18 @@ export default class ScrollService {
       let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
 
       if (fullyVisible || partiallyVisible) {
-        // if screen is partially visible (not fully rendered), broadcast fade-in effect
         if (partiallyVisible && !screen.alreadyRendered) {
+          //BROADCAST FADE IN EFFECT
           ScrollService.currentScreenFadeIn.next({
             fadeInScreen: screen.screen_name,
           });
           screen["alreadyRendered"] = true;
           break;
         }
-        //if it is fully visible,  broadcast the screen name
+
         if (fullyVisible) {
-          ScrollService.currentScreenBroadCaster.next({
+          // BROADCAST SCREEN NAME
+          ScrollService.currentScreenBroadcaster.next({
             screenInView: screen.screen_name,
           });
           break;

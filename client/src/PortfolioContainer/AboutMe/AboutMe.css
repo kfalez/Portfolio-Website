@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top:140px;
-  /* margin: 10px 0 ; */
+  padding-top:150px;
+
 }
 .about-me-parent {
   max-width: 1000px;
@@ -37,7 +37,7 @@
 
 .icon-img{
   height:50px;
-  width:50px;
+  width:80px;
 }
 .btn{
   margin-top:20px;

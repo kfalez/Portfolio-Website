@@ -14,6 +14,7 @@ export default function Header() {
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
 
   useEffect(() => {
+    stickHeader();
     window.addEventListener('scroll', stickHeader);
     return () => window.removeEventListener('scroll', stickHeader);
   }, []);
@@ -32,16 +33,23 @@ export default function Header() {
     if (screenIndex < 0) return;
   };
 
+  function delay(ms) {
+    return new Promise((resolve) => {
+       setTimeout(resolve, ms);
+    })
+ }
+
   //subscribe to observable
   let currentScreenSubscription =
-    ScrollService.currentScreenBroadCaster.subscribe(updateCurrentScreen);
+    ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
     return TOTAL_SCREENS.map((Screen, i) => (
       <div
         key={Screen.screen_name}
         className={getHeaderOptionsClass(i)}
-        onClick={() => switchScreen(i, Screen)}
+        onClick={() => (switchScreen(i, Screen))}
+        
       >
         <span>{Screen.screen_name}</span>
       </div>
@@ -67,6 +75,12 @@ export default function Header() {
     setSelectedScreen(index);
     setShowHeaderOptions(false);
   };
+
+  // implemented for 'About Me' fixes cropping
+  // const switchTwice =(index, screen)=>{
+  //   switchScreen(index, screen)
+  //   if(screen.screen_name ==='About Me') setTimeout(() => { switchScreen(index, screen) }, 400)
+  // }
 
   return (
     <div className={`header ${stickyClass}`}>

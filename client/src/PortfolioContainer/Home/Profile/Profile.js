@@ -27,7 +27,6 @@ export default function Profile() {
             <span className="primary-text">
               {" "}
               <h1>
-                {" "}
                 <Typical
                   loop={Infinity}
                   steps={[

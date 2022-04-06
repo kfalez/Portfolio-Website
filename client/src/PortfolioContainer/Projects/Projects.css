@@ -26,10 +26,6 @@
   font-weight: bold;
 }
 
-.owl-item > div {
-  pointer-events: auto !important;
-}
-
 /* .footer-image {
   width: 100%;
   height: 100%;

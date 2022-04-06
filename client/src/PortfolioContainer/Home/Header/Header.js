@@ -9,21 +9,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
 
 export default function Header() {
-  const [stickyClass, setStickyClass] = useState('');
+  const [stickyClass, setStickyClass] = useState("");
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
 
   useEffect(() => {
     stickHeader();
-    window.addEventListener('scroll', stickHeader);
-    return () => window.removeEventListener('scroll', stickHeader);
+    window.addEventListener("scroll", stickHeader);
+    return () => window.removeEventListener("scroll", stickHeader);
   }, []);
 
   const stickHeader = () => {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 0? setStickyClass('sticky-nav') : setStickyClass('');
+      windowHeight > 0 ? setStickyClass("sticky-nav") : setStickyClass("");
     }
   };
 
@@ -35,9 +35,9 @@ export default function Header() {
 
   function delay(ms) {
     return new Promise((resolve) => {
-       setTimeout(resolve, ms);
-    })
- }
+      setTimeout(resolve, ms);
+    });
+  }
 
   //subscribe to observable
   let currentScreenSubscription =
@@ -48,8 +48,7 @@ export default function Header() {
       <div
         key={Screen.screen_name}
         className={getHeaderOptionsClass(i)}
-        onClick={() => (switchScreen(i, Screen))}
-        
+        onClick={() => switchScreen(i, Screen)}
       >
         <span>{Screen.screen_name}</span>
       </div>
@@ -76,18 +75,11 @@ export default function Header() {
     setShowHeaderOptions(false);
   };
 
-  // implemented for 'About Me' fixes cropping
-  // const switchTwice =(index, screen)=>{
-  //   switchScreen(index, screen)
-  //   if(screen.screen_name ==='About Me') setTimeout(() => { switchScreen(index, screen) }, 400)
-  // }
-
   return (
     <div className={`header ${stickyClass}`}>
-    <div
+      <div
         className="header-container"
         onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-
       >
         <div className="header-parent">
           <div
@@ -112,5 +104,4 @@ export default function Header() {
       </div>
     </div>
   );
-};
-
+}

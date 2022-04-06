@@ -216,6 +216,34 @@ export default function Projects(props) {
                 </div>
               </div>
             </div>
+            <div className="ms-2 me-2">
+              <div className="card">
+                <img
+                  src="img/projects/dog-classifier.jpg"
+                  className="card-img-top"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    Transfer-Learning-Dog-Breed-Classifier{" "}
+                  </h5>
+                  <p>
+                    Multi-class image classifier for a set of dog breed images.
+                    Applied various ML and deep learning methods: CNNs (transfer
+                    learning), Ensemble methods, AutoML and Grad-CAM.
+                  </p>
+                  <div className="box-btn">
+                    <span>
+                      <a
+                        href="https://github.com/kfalez/Transfer-Learning-Dog-Breed-Classifications"
+                        target="_blank"
+                      >
+                        Repo Link
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </OwlCarousel>
         </div>
       </section>

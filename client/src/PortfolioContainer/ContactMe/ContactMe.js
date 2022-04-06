@@ -6,13 +6,14 @@ import {toast} from 'react-toastify';
 import imgBack from "../../../src/images/mail.jpg";
 import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading.js";
-import ScrollService from "../../Utilities/ScrollService.js";
+import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations.js";
+import ScrollButton from "../ScrollButton/ScrollButton";
 import "./ContactMe.css";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
+    if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
   const fadeInSubscription =
@@ -73,7 +74,7 @@ export default function ContactMe(props) {
   }
 
   return (
-    <div className="main-container" id={props.id || ""}>
+    <div className="main-container fade-in" id={props.id || ""}>
       <ScreenHeading subHeading={"Let's Connect!"} title={"Contact Me"} />
       <div className="central-form">
         <div className="col">
@@ -95,7 +96,7 @@ export default function ContactMe(props) {
         </div>
         <div className="back-form">
           <div className="img-back">
-            <h4>Create Your Email Here:</h4>
+            <h4>Email: Kelten@live.ca</h4>
             <img src={imgBack} alt="check your internet!" />
           </div>
           <form onSubmit={submitForm}>
@@ -103,7 +104,7 @@ export default function ContactMe(props) {
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Your Email</label>
             <input type="email" onChange={handleEmail} value={email} />
 
             <label htmlFor="message">Message</label>

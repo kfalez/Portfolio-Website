@@ -1,6 +1,7 @@
 import React from "react";
 import Typical from "react-typical";
 import './Profile.css';
+import ScrollService from "../../../Utilities/ScrollService";
 
 export default function Profile() {
   return (
@@ -46,7 +47,7 @@ export default function Profile() {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn">
+            <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToContactMe()}>
               {""}
               Contact Me{" "}
             </button>

@@ -66,7 +66,7 @@ export default function AboutMe(props) {
               <img className="icon-img" src="img/icons/aws.png" />
             </div>
             <div className="about-me-options">
-              <button className="btn primary-btn">
+              <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToContactMe()}>
                 {""}
                 Contact Me{" "}
               </button>

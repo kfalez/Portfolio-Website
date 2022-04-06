@@ -7,11 +7,10 @@ import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
 import "./Projects.css";
-import shape from "../../../src/assets/Projects/shape-bg.png";
 
 export default function Projects(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
+    if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
   const fadeInSubscription =
@@ -48,7 +47,7 @@ export default function Projects(props) {
         title={"Projects"}
         subHeading={"My Projects I have Worked On"}
       />
-      <section className="projects-section" id={props.id || ""}>
+      <section className="projects-section fade-in" id={props.id || ""}>
         <div className="container mt-5">
           <OwlCarousel
             className="owl-carousel"
@@ -209,9 +208,6 @@ export default function Projects(props) {
           </OwlCarousel>
         </div>
       </section>
-      {/* <div className="footer-image">
-        <img src={shape} alt="check your internet!" />
-      </div> */}
     </div>
   );
 }

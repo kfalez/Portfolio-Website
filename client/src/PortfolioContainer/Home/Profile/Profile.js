@@ -1,6 +1,6 @@
 import React from "react";
 import Typical from "react-typical";
-import './Profile.css';
+import "./Profile.css";
 import ScrollService from "../../../Utilities/ScrollService";
 
 export default function Profile() {
@@ -10,7 +10,10 @@ export default function Profile() {
         <div className="profile-details">
           <div className="colz">
             <div className="colz-icon">
-              <a href="https://www.linkedin.com/in/kelten-falez-3100a845/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/kelten-falez-3100a845/"
+                target="_blank"
+              >
                 <i className="fa fa-linkedin-square"></i>
               </a>
               <a href="https://github.com/kfalez" target="_blank">
@@ -47,7 +50,10 @@ export default function Profile() {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToContactMe()}>
+            <button
+              className="btn primary-btn"
+              onClick={() => ScrollService.scrollHandler.scrollToContactMe()}
+            >
               {""}
               Contact Me{" "}
             </button>

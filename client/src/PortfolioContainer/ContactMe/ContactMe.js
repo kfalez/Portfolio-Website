@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Typical from "react-typical";
-import axios from 'axios';
-import {toast} from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 
 import imgBack from "../../../src/images/mail.jpg";
 import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading.js";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations.js";
-import ScrollButton from "../ScrollButton/ScrollButton";
 import "./ContactMe.css";
 
 export default function ContactMe(props) {
@@ -37,41 +36,39 @@ export default function ContactMe(props) {
     setMessage(e.target.value);
   };
 
-  const submitForm = async(e)=> {
-      e.preventDefault();
-      try {
-        let data={
-            name,
-            email,
-            message,
-        };
-        setBool(true)
-        const res = await axios.post(`/contact`, data)
-        // return message from backend upon error / success
-        if(name.length === 0 || email.length === 0 || message.length === 0) {
-            setBanner(res.data.msg)
-            toast.error(res.data.msg)
-            setBool(false)
-        }
-        else if(res.status === 200) {
-            setBanner(res.data.msg)
-            toast.success(res.data.msg)
-            setBool(false)
-
-            setName("");
-            setEmail("");
-            setMessage("");
-        }
-
-      } catch (error) {
-          console.log(error)
-      }
-      let data={
-          name,
-          email,
-          message,
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        message,
       };
-  }
+      setBool(true);
+      const res = await axios.post(`/contact`, data);
+      // return message from backend upon error / success
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(res.data.msg);
+        toast.error(res.data.msg);
+        setBool(false);
+      } else if (res.status === 200) {
+        setBanner(res.data.msg);
+        toast.success(res.data.msg);
+        setBool(false);
+
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    let data = {
+      name,
+      email,
+      message,
+    };
+  };
 
   return (
     <div className="main-container fade-in" id={props.id || ""}>
@@ -114,11 +111,12 @@ export default function ContactMe(props) {
               <button type="submit">
                 send
                 <i className="fa fa-paper-plane" />
-                {bool ?(<b className='load'>
-                    <img src={load1} alt='image error'/>
-                </b>
+                {bool ? (
+                  <b className="load">
+                    <img src={load1} alt="image error" />
+                  </b>
                 ) : (
-                    ""
+                  ""
                 )}
               </button>
             </div>

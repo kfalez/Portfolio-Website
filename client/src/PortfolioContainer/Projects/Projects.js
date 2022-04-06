@@ -20,14 +20,13 @@ export default function Projects(props) {
     loop: true,
     margin: 20,
     nav: true,
-    // autoHeight: true,
     animateIn: "bounceInRight",
     animateOut: "bounceOutRight",
     dots: true,
     dotsContainer: ".owl-dots",
     autoplay: true,
     smartSpeed: 2000,
-    autoplayHoverPause:true,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1,
@@ -95,7 +94,10 @@ export default function Projects(props) {
                   </p>
                   <div className="box-btn">
                     <span>
-                      <a href="https://github.com/kfalez/Veterinary-Application" target="_blank">
+                      <a
+                        href="https://github.com/kfalez/Veterinary-Application"
+                        target="_blank"
+                      >
                         Repo Link
                       </a>
                     </span>
@@ -122,7 +124,10 @@ export default function Projects(props) {
                   </p>
                   <div className="box-btn">
                     <span>
-                      <a href="https://github.com/kfalez/Movie-Theatre-Ticket-Reserveration-App" target="_blank">
+                      <a
+                        href="https://github.com/kfalez/Movie-Theatre-Ticket-Reserveration-App"
+                        target="_blank"
+                      >
                         Repo Link
                       </a>
                     </span>
@@ -171,7 +176,10 @@ export default function Projects(props) {
                   </p>
                   <div class="box-btn">
                     <span>
-                      <a href="https://github.com/kfalez/UofC-Hackathon-2022-PIPPA" target="_blank">
+                      <a
+                        href="https://github.com/kfalez/UofC-Hackathon-2022-PIPPA"
+                        target="_blank"
+                      >
                         Repo Link
                       </a>
                     </span>
@@ -197,7 +205,10 @@ export default function Projects(props) {
                   </p>
                   <div className="box-btn">
                     <span>
-                      <a href="https://github.com/kfalez/Portfolio-Website" target="_blank">
+                      <a
+                        href="https://github.com/kfalez/Portfolio-Website"
+                        target="_blank"
+                      >
                         Repo Link
                       </a>
                     </span>
